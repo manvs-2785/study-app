@@ -1,0 +1,15 @@
+<p>client works!</p>
+<input type="text" [(ngModel)] = "newUserName" />
+<button (click) = "onSubmit()"> Add User</button> 
+<table>
+    <tr>
+        <td>User Name</td>
+        <td>Password</td>
+        <td>Action</td>
+    </tr>
+    <tr *ngFor="let name of userNameArray; let indexOfelement=index;">
+        <td>{{ name }}</td>
+        <td *ngIf="isShowKey &&  indexOfelement==currentIndex">{{ currentPassword }}</td>
+        <td><button (click)= "showPassword(indexOfelement)">View Password</button></td>
+    </tr>
+</table>
